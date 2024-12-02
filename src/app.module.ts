@@ -3,9 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RequestService } from './request.service';
 import { AuthenticationMiddleware } from './middleware/authentication.middleware';
-import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
+import { APP_GUARD, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 import { AuthGuard } from './guards/auth.guards';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
+import { FreezePipe } from './pipes/freeze.pipe';
 
 @Module({
   imports: [],
