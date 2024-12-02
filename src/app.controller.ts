@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  InternalServerErrorException,
   Post,
   UseGuards,
   UseInterceptors,
@@ -23,5 +24,10 @@ export class AppController {
   @Post()
   examplePost(@Body(new FreezePipe()) body: any) {
     body.test = 32;
+  }
+
+  @Get('error')
+  throwError() {
+    throw new InternalServerErrorException();
   }
 }
